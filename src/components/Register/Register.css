@@ -1,0 +1,60 @@
+* {box-sizing: border-box;}
+
+/* Main container */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+h2 {
+  font-family: monospace;
+  font-size: 30px;
+  color: #2f3640;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Style the input container */
+.input-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+  font-family: monospace;
+  font-weight: 100;
+}
+
+/* Style the form icons */
+.icon {
+  padding: 10px;
+  background: #114357;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+/* Style the input fields */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid #114357;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #114357;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
