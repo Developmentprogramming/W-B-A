@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import NavigationBar from './components/NavigationBar/NavigationBar';
+import NavigationBarHome from './components/Home/NavigationBar/NavigationBar';
+import ToolBar from './components/Home/ToolBar/ToolBar';
 
 class App extends Component {
   constructor() {
@@ -36,7 +38,14 @@ class App extends Component {
           <Register onRouteChange={this.onRouteChange} />
         </div>
       )
-    } 
+    } else {
+      return (
+        <div>
+          <NavigationBarHome onRouteChange={this.onRouteChange} />
+          <ToolBar />
+        </div>
+      )
+    }
   }
 }
 

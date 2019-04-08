@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette');
+@import url('https://fonts.googleapis.com/css?family=Acme');
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
 * {box-sizing: border-box;}
 
 /* Main container */
@@ -8,7 +13,8 @@
 }
 
 h2 {
-  font-family: monospace;
+  position: relative;
+  font-family: 'Poiret One', cursive;
   font-size: 30px;
   color: #2f3640;
   margin-bottom: 30px;
@@ -37,11 +43,50 @@ h2 {
 .input-field {
   width: 100%;
   padding: 10px;
+  padding-right: 120px;
   outline: none;
+  transition: all 0.3s;
+  border: 2px solid white;
+}
+
+.input-container #passwd {
+  font-family: 'Comfortaa', cursive;
+}
+
+.input-container #showButton {
+  cursor: pointer;
+  background: white;
+  color: black;
+  transition: 0.2s;
+  text-align: center;
+}
+
+.input-container #showButton:active {
+  border-right: 2px solid #114357;
+  border-top: 2px solid #114357;
+  border-bottom: 2px solid #114357;
+}
+
+#fullname {
+  font-family: 'Courgette', cursive;
+}
+
+#username {
+  font-family: 'Acme', sans-serif;
 }
 
 .input-field:focus {
   border: 2px solid #114357;
+}
+
+#passwd:focus {
+  border-right: 2px solid white;
+}
+
+.input-container:focus-within #showButton {
+  border-right: 2px solid #114357;
+  border-top: 2px solid #114357;
+  border-bottom: 2px solid #114357;
 }
 
 /* Set a style for the submit button */
@@ -53,6 +98,7 @@ h2 {
   cursor: pointer;
   width: 100%;
   opacity: 0.9;
+  font-family: 'Poiret One', cursive;
 }
 
 .btn:hover {
