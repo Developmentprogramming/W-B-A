@@ -7,7 +7,7 @@ class ToolBar extends React.Component {
     super();
     this.state = {
       currentCmp: '',
-      cmpList: ['Cmp 1', 'Cmp 2', 'Cmp 3', 'Cmp 4', 'Cmp 5', 'Cmp 6'],
+      cmpList: ['Cmp 1', 'Cmp 2', 'Cmp 3', 'Cmp 4', 'Cmp 5', 'Cmp 6', 'Cmp 7', 'Cmp 8', 'Cmp 9', 'Cmp 10'],
     }
   }
 

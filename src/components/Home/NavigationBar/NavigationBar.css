@@ -1,6 +1,7 @@
 #container {
   background: linear-gradient(to right, #114357, #f29492);
-  display: inline;
+  display: sticky;
+  top: 0;
 }
 
 #back-button {
@@ -74,9 +75,4 @@
   color: white;
   font-size: 15px;
   font-family: 'Courgette', cursive;
-}
-
-#line {
-  position: sticky;
-  top: 0px;
 }

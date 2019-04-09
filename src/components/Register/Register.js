@@ -21,22 +21,22 @@ const Register = ({ onRouteChange }) => {
 				  <h2>Register and Leave accounting on us</h2>
 				  <div className="input-container">
 				    <i className="fas fa-signature icon"></i>
-				    <input id='fullname' className="input-field" type="text" placeholder="Fullname" name="fllnm" />
+				    <input id='fullname' className="input-field" type="text" placeholder="Fullname" name="fllnm" required />
 				  </div>
 
 				  <div className="input-container">
 				    <i className="fa fa-user icon"></i>
-				    <input id='username' className="input-field" type="text" placeholder="Username" name="usrnm" />
+				    <input id='username' className="input-field" type="text" placeholder="Username" name="usrnm" required />
 				  </div>
 
 				  <div className="input-container">
 				    <i className="fa fa-envelope icon"></i>
-				    <input className="input-field" type="text" placeholder="Email" name="email" />
+				    <input className="input-field" type="text" placeholder="Email" name="email" required />
 				  </div>
 
 				  <div className="input-container">
 				    <i className="fa fa-key icon"></i>
-				    <input id='passwd' className="input-field" type="password" placeholder="Password" name="psw" />
+				    <input id='passwd' className="input-field" type="password" placeholder="Password" name="psw" required />
 						<i onClick={() => {showButtonClick()}} className='fas fa-eye icon' id='showButton'></i>
 				  </div>
 

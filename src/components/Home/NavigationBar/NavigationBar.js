@@ -6,7 +6,7 @@ const NavigationBar = ({ onRouteChange }) => {
 	return (
 		<div id='container'>
 			<nav>
-			 	<div id='line' >
+			 	<div>
 					<button onClick={() => {onRouteChange('login')}} id='back-button' ><img alt='back-button' src={backButton} /></button>
 			 		<label id='SignOut' >LogOut</label>
 					<div id='userIcon'>

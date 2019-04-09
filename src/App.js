@@ -4,6 +4,7 @@ import Login from './components/Login/Login';
 import NavigationBar from './components/NavigationBar/NavigationBar';
 import NavigationBarHome from './components/Home/NavigationBar/NavigationBar';
 import ToolBar from './components/Home/ToolBar/ToolBar';
+import ErrorBar from './components/Home/ErrorBar/ErrorBar';
 
 class App extends Component {
   constructor() {
@@ -29,6 +30,7 @@ class App extends Component {
         <div>
           <NavigationBar backButtonShow={this.state.backButtonShow} />
           <Login onRouteChange={this.onRouteChange} />
+          <ErrorBar />
         </div>
       )
     } else if (this.state.route === 'register') {
@@ -36,6 +38,7 @@ class App extends Component {
         <div>
           <NavigationBar backButtonShow={this.state.backButtonShow} onRouteChange={this.onRouteChange} />
           <Register onRouteChange={this.onRouteChange} />
+          <ErrorBar />
         </div>
       )
     } else {

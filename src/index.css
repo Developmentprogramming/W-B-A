@@ -9,4 +9,5 @@ body {
   background: linear-gradient(to right, #114357, #f29492);
   user-select: none;
   overflow: auto;
+  border: 0;
 }
