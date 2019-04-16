@@ -1,49 +1,36 @@
 import React from 'react';
 import './Register.css';
+import { toggleShowButton, focusPasswdInput } from'../Login/Login';
 
-const showButtonClick = () => {
-	let x = document.getElementById('showButton');
-	let y = document.getElementById('passwd');
-	y.focus();
-	if (x.className === 'fas fa-eye icon' && y.type === 'password') {
-		x.className = 'fas fa-eye-slash icon';
-		y.type = 'text';
-	} else if (x.className === 'fas fa-eye-slash icon' && y.type === 'text') {
-		x.className = 'fas fa-eye icon';
-		y.type = 'password';
-	}
-}
+const Register = () => {
+  return (
+    <div className='registercontainer' style={{maxWidth:'500px', margin:'auto'}}>
+      <h2>Register and Leave accounting on us</h2>
 
-const Register = ({ onRouteChange }) => {
-	return (
-		<div className='container'>
-			 <div>
-				  <h2>Register and Leave accounting on us</h2>
-				  <div className="input-container">
-				    <i className="fas fa-signature icon"></i>
-				    <input id='fullname' className="input-field" type="text" placeholder="Fullname" name="fllnm" required />
-				  </div>
+      <div className="input-container">
+        <i className="fas fa-signature icon"></i>
+        <input maxLength='12' minLength='5' className="input-field" type="text" placeholder="Fullname" name="fllnm" />
+      </div>
 
-				  <div className="input-container">
-				    <i className="fa fa-user icon"></i>
-				    <input id='username' className="input-field" type="text" placeholder="Username" name="usrnm" required />
-				  </div>
+      <div className="input-container">
+        <i className="fa fa-user icon"></i>
+        <input maxLength='8' minLength='5' className="input-field" type="text" placeholder="Username" name="usrnm" />
+      </div>
 
-				  <div className="input-container">
-				    <i className="fa fa-envelope icon"></i>
-				    <input className="input-field" type="text" placeholder="Email" name="email" required />
-				  </div>
+      <div className="input-container">
+        <i className="fa fa-envelope icon"></i>
+        <input className="input-field" type="email" placeholder="Email" name="email" />
+      </div>
 
-				  <div className="input-container">
-				    <i className="fa fa-key icon"></i>
-				    <input id='passwd' className="input-field" type="password" placeholder="Password" name="psw" required />
-						<i onClick={() => {showButtonClick()}} className='fas fa-eye icon' id='showButton'></i>
-				  </div>
+      <div className="input-container">
+        <i className="fa fa-key icon"></i>
+        <input maxLength='12' minLength='8' id='passwd' type="password" placeholder="Password" name="psw" />
+        <button onFocus={() => {focusPasswdInput()}} onClick={() => {toggleShowButton()}} className='fas fa-eye icon' id='show-button' ></button>
+      </div>
 
-				  <button onClick={() => {onRouteChange('home')}} type="submit" className="btn">Register</button>
-			</div> 
-		</div>
-	)
+      <button type="submit" className="btn">Register</button>
+    </div>
+  )
 }
 
 export default Register;

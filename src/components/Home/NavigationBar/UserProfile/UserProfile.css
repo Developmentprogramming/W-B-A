@@ -1,0 +1,273 @@
+ /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+ .flip-card {
+  background-color: transparent;
+  width: 100px;
+  height: 100px;
+  /* perspective: 1000px; Remove this if you don't want the 3D effect */
+  float: right;
+  margin-right: 10px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: #283c86;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flip-card-back h3 {
+  font-size: 15px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+#editbutton {
+  width: 50px;
+  height: 20px;
+  color: white;
+  background: transparent;
+  border: 1px solid white;
+  opacity: 0.83;
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 10px;
+}
+
+#editbutton:active {
+  background: #283c86;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  animation-name: fadeIn;
+  animation-duration: 0.4s
+}
+
+/* Modal Content */
+.modal-content {
+  position: fixed;
+  bottom: 0;
+  background-color: #fefefe;
+  width: 100%;
+  animation-name: slideIn;
+  animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background: linear-gradient(to right, #283c86, #45a247);
+  color: white;
+}
+
+.modal-header h1 {
+  text-align: center;
+  font-size: 20px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-body h3 {
+  color: black;
+  font-size: 13px;
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
+  margin-top: 10px;
+  font-family: 'Poiret One', cursive;
+  font-weight: 600;
+}
+
+.modal-body button[id = 'change-passwd'] {
+  background: #283c86;
+  font-size: 15px;
+  display: inline-block;
+  width: 20%;
+  height: auto;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+}
+
+.modal-footer {
+  padding: 2px 16px;
+  background: linear-gradient(to right, #283c86, #45a247);
+  color: white;
+}
+
+/* Add Animation */
+@keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+.dialog-button {
+  position: relative;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  text-align: center;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 10px;
+  margin: 8px 10px;
+  color: white;
+}
+
+.dialog-button:focus {
+  border: none;
+  outline: none;
+}
+
+.dialog-button:after {
+  content: "";
+  background: #f1f1f1;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px !important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s;
+}
+
+.dialog-button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.modal-body input[type='text'], .modal-body input[type='password'] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.passwd-area {
+  display: none;
+}
+
+.modal-body input[type='password'] {
+  border-right: 1px solid white;
+}
+
+.current-passwd:focus, .new-passwd:focus {
+  border-right: 1px solid white;
+}
+
+#current-passwd-container button[id='show-button'], #new-passwd-container button[id='show-button-new'] {
+  background: white;
+  color: black;
+  transition: all 0.2s;
+  outline: none;
+  height: 41px;
+  font-size: 20px;
+  border: none;
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0px;
+  border-radius: 4px;
+  position: fixed;
+  margin-top: 8px;
+}
+
+#current-passwd-container button[id='show-button']:active, #new-passwd-container button[id='show-button-new']:active {
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+#set-profile-container label[id='set-profile'] {
+  width: 20%;
+  height: auto;
+  color: white;
+  background: #283c86;
+  display: inline-block;
+  padding: 8px;
+  margin-top: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 15px;
+  font-family: 'Quicksand', sans-serif;
+  border: 1px solid white;
+}
+
+#file-chooser {
+  opacity: 0;
+  z-index: -1;
+}

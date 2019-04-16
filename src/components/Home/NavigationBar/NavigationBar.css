@@ -1,78 +1,45 @@
-#container {
-  background: linear-gradient(to right, #114357, #f29492);
-  display: sticky;
-  top: 0;
-}
-
-#back-button {
+ /* Tooltip container */
+ .tooltip {
   position: relative;
-  background-color: #114357;
-  border: none;
-  font-size: 28px;
-  color: white;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-  text-decoration: none;
-  overflow: hidden;
-  cursor: pointer;
-  border-radius: 20px;
-  margin-left: 20px;
-  margin-top: 10px;
+  display: inline-block;
 }
 
-#back-button:after {
-  content: "";
-  background: #bdc3c7;
-  display: block;
-  position: absolute;
-  padding-top: 300%;
-  padding-left: 350%;
-  margin-left: -20px !important;
-  margin-top: -120%;
-  opacity: 0;
-  transition: all 0.8s
-}
-
-#back-button:active:after {
-  padding: 0;
-  margin: 0;
-  opacity: 1;
-  transition: 0s
-}
-
-#SignOut {
-	color: white;
-	font-family: monospace;
-	font-size: 15px;
-	position: absolute;
-  margin-top: 20px;
-	left: 0px;
-	margin-left: 45px;
-}
-
-#userIcon {
-  float: right;
-  position: relative;
-}
-
-#userIconContainer {
-  width: 100px;
-  height: 100px;
-  background: transparent;
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 90px;
+  background-color: #555;
+  color: #fff;
   text-align: center;
-  margin-right: 5px;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 70%;
+  left: 50%;
+  margin-left: -40px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
-#UserIcon {
-  background: transparent;
-  color: black;
-  margin-top: 10px;
-  font-size: 35px;
-  cursor: pointer;
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
 }
 
-#userName {
-  color: white;
-  font-size: 15px;
-  font-family: 'Courgette', cursive;
-}
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+} 

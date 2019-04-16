@@ -1,29 +1,21 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald');
-
-#container {
-  position: sticky;
-  top: 0;
-}
-
-#back-button {
+.button {
   position: relative;
-  background-color: #114357;
+  background-color: transparent;
   border: none;
-  font-size: 28px;
-  color: white;
-  -webkit-transition-duration: 0.4s; /* Safari */
+  font-size: 18px;
+  text-align: center;
   transition-duration: 0.4s;
   text-decoration: none;
   overflow: hidden;
   cursor: pointer;
-  border-radius: 20px;
-  margin-left: 20px;
-  margin-top: 10px;
+  border-radius: 30px;
+  margin-top: 15px;
+  margin-left: 15px;
 }
 
-#back-button:after {
+.button:after {
   content: "";
-  background: #bdc3c7;
+  background: #f1f1f1;
   display: block;
   position: absolute;
   padding-top: 300%;
@@ -31,45 +23,12 @@
   margin-left: -20px !important;
   margin-top: -120%;
   opacity: 0;
-  transition: all 0.8s
+  transition: all 0.8s;
 }
 
-#back-button:active:after {
+.button:active:after {
   padding: 0;
   margin: 0;
   opacity: 1;
-  transition: 0s
-}
-
-#filled-nav {
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-	text-align: center;
-	justify-content: center;
-	margin-bottom: 20px;
-	padding-bottom: 20px;
-	position: absolute;
-	letter-spacing: 10px;
-	margin-top: 10px;
-}
-
-#empty-nav {
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-	text-align: center;
-	justify-content: center;
-	margin-bottom: 20px;
-	padding-bottom: 20px;
-	letter-spacing: 10px;
-	margin-top: 10px;
-}
-
-#label {
-	color: #114357;
-	font-family: 'Oswald', sans-serif;
-	font-size: 40px;
-	position: absolute;
-	font-weight: bold;
+  transition: 0s;
 }

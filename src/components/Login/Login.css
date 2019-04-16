@@ -1,31 +1,115 @@
-p {
-	font-family: sans-serif;
-	color: black;
-	font-size: 12px;
-	text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+.logincontainer {
+  top: 50%;
+  left: 50%;
+  text-align: center;
 }
 
-#main-container {
-	justify-content: center;
-	text-align: center;
-	position: relative;
-	margin: 0px;
-	padding: 0px;
+* {box-sizing: border-box;}
+
+/* Style the input container */
+.input-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
-#or {
-	font-size: 15px;
-	color: #dfe6e9;
+.logincontainer h2 {
+  font-family: 'Quicksand', sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: white;
+  font-size: 2vw;
 }
 
-#or::after {
-	content: '\2212';
-	padding-left: 10px;
-	margin-left: 10px;
+/* Style the form icons */
+.icon {
+  padding: 10px;
+  background: #283c86;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+  font-size: 20px;
 }
 
-#or::before {
-	content: '\2212';
-	padding-right: 10px;
-	margin-right: 10px;
+.logincontainer button[id = 'show-button'] {
+  background: white;
+  color: black;
+  transition: all 0.2s;
+  outline: none;
+  border: 2px solid white;
+  height: 41px;
+  font-size: 18px;
+}
+
+.logincontainer button[id = 'show-button']:active {
+  background: white;
+  color: black;
+  transition: all 0.2s;
+  outline: none;
+  border: 2px solid white;
+  height: 41px;
+  font-size: 18px;
+}
+
+/* Style the input fields */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  transition: all 0.2s;
+  border: 2px solid white;
+  font-size: 1vw;
+}
+
+.input-field:focus {
+  border: 2px solid #283c86;
+}
+
+#passwd {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  transition: all 0.2s;
+  border: 2px solid white;
+  font-size: 1vw;
+}
+
+#passwd:focus {
+  border-top: 2px solid #283c86;
+  border-left: 2px solid #283c86;
+  border-bottom: 2px solid #283c86;
+  border-right: 2px solid white;
+}
+
+.input-container:focus-within #show-button {
+  border-top: 2px solid #283c86;
+  border-right: 2px solid #283c86;
+  border-bottom: 2px solid #283c86;
+  border-left: 2px solid white;
+}
+
+.logincontainer p {
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Set a style for the submit button */
+.btn {
+  background-color: #283c86;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
 }

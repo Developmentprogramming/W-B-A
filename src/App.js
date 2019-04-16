@@ -1,54 +1,31 @@
 import React, { Component } from 'react';
-import Register from './components/Register/Register';
-import Login from './components/Login/Login';
-import NavigationBar from './components/NavigationBar/NavigationBar';
-import NavigationBarHome from './components/Home/NavigationBar/NavigationBar';
-import ToolBar from './components/Home/ToolBar/ToolBar';
-import ErrorBar from './components/Home/ErrorBar/ErrorBar';
+import './App.css';
+import Route from './components/Route/Route';
 
 class App extends Component {
-  constructor() {
+  constructor(){
     super();
     this.state = {
       route: 'login',
-      backButtonShow: false
+      showBackButton: false
     }
   }
 
   onRouteChange = (route) => {
     this.setState({route: route});
-    if (route === 'register') {
-      this.setState({backButtonShow: true});
+    if(route === 'register') {
+      this.setState({showBackButton: true});
     } else if (route === 'login') {
-      this.setState({backButtonShow: false});
+      this.setState({showBackButton: false});
+    } else {
+      this.setState({showBackButton: false});
     }
   }
 
   render() {
-    if (this.state.route === 'login') {
-      return (
-        <div>
-          <NavigationBar backButtonShow={this.state.backButtonShow} />
-          <Login onRouteChange={this.onRouteChange} />
-          <ErrorBar />
-        </div>
-      )
-    } else if (this.state.route === 'register') {
-      return (
-        <div>
-          <NavigationBar backButtonShow={this.state.backButtonShow} onRouteChange={this.onRouteChange} />
-          <Register onRouteChange={this.onRouteChange} />
-          <ErrorBar />
-        </div>
-      )
-    } else {
-      return (
-        <div>
-          <NavigationBarHome onRouteChange={this.onRouteChange} />
-          <ToolBar />
-        </div>
-      )
-    }
+    return (
+      <Route route={this.state.route} onRouteChange={this.onRouteChange} showBackButton={this.state.showBackButton} />
+    );
   }
 }
 
