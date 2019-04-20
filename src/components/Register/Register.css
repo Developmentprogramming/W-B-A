@@ -29,7 +29,7 @@
   transition: all 0.2s;
   outline: none;
   border: 2px solid white;
-  height: 41px;
+  height: 46px;
   font-size: 18px;
 }
 
@@ -39,7 +39,7 @@
   transition: all 0.2s;
   outline: none;
   border: 2px solid white;
-  height: 41px;
+  height: 46px;
   font-size: 18px;
 }
 
@@ -97,6 +97,7 @@
   cursor: pointer;
   width: 100%;
   opacity: 0.9;
+  font-size: 12px;
 }
 
 .btn:hover {

@@ -1,0 +1,36 @@
+.select-cmp-container {
+  display: 'none';
+  text-align: left;
+  border-radius: 10px;
+}
+
+.header-container {
+  background: linear-gradient(to right, #283c86, #45a247);
+  padding: 2px 16px;
+}
+
+.header-container h1 {
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Quicksand', sans-serif;
+  text-align: center;
+}
+
+.content-container {
+  padding: 10px 16px;
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
+  height: calc(100vh - 210px);
+}
+
+.content-container #list {
+  opacity: 0.6;
+}
+
+.content-container #list:hover {
+  border: none;
+  outline: none;
+  opacity: 0.9;
+}
