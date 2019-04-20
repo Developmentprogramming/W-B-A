@@ -1,6 +1,7 @@
 import React from 'react';
 import './CreateCmp.css';
 import Country from './Country/Country';
+import CurrencySymbol from './CurrencySymbol/CurrencySymbol';
 
 const launchCreateCmp = () => {
   let createcmp = document.getElementsByClassName('create-cmp-container')[0];
@@ -14,16 +15,19 @@ const closeCreateCmp = () => {
 
 const getDate = () => {
   let date = new Date();
-  return (`${date.getFullYear()} / ${date.getMonth()} / ${date.getDay()}`);
+  return (`${date.getDay()} / ${date.getMonth()} / ${date.getFullYear()}`);
 }
 
 class CreateCmp extends React.Component {
   constructor() {
     super()
     this.state = {
+      currencySymbols: [],
       countriesList: [],
       Cmp: {
-        date: getDate()
+        cmpName: '',
+        financialDate: ' ',
+        booksBeginDate: ' '
       }
     }
   }
@@ -35,6 +39,28 @@ class CreateCmp extends React.Component {
       this.setState({countriesList: body});
     })
     .catch(err => console.log(err))
+
+    fetch('https://gist.githubusercontent.com/Fluidbyte/2973986/raw/b0d1722b04b0a737aade2ce6e055263625a0b435/Common-Currency.json')
+    .then(res => res.json())
+    .then(data => {
+      let values = Object.keys(data).map((value, i) => {
+        return data[value];
+      })
+      this.setState({currencySymbols: values});
+    })
+    .catch(err => {console.log(err)})
+  }
+
+  onfinancialDateChange = (event) => {
+    this.setState({Cmp: {financialDate: event.target.value}});
+  }
+
+  onbooksBeginDateChange = (event) => {
+    this.setState({Cmp: {booksBeginDate: event.target.value}});
+  }
+
+  onCompanyNameChange = (event) => {
+    this.setState({Cmp: {cmpName: event.target.value}});
   }
 
   render() {
@@ -49,9 +75,9 @@ class CreateCmp extends React.Component {
           <div className='w3-container create-cmp-content'>
             <div>
               <h3>Company Name</h3>
-              <input type='text' placeholder='Name' id='dialog-input' />
+              <input onChange={this.onCompanyNameChange} type='text' placeholder='Name' id='dialog-input' />
             </div>
-            <div style={{textAlign: 'center', borderTop: '1px solid #353b48', marginTop: '10px', paddingTop: '10px'}}>
+            <div className='sep'>
               <label>Primary Mailing Details</label>
             </div>
             <div>
@@ -60,7 +86,7 @@ class CreateCmp extends React.Component {
             </div>
             <div>
               <h3>Country</h3>
-              <div class="select-dropdown">
+              <div className="select-dropdown">
                 <select>
                   {
                     this.state.countriesList.map((country, i) => {
@@ -70,16 +96,16 @@ class CreateCmp extends React.Component {
                 </select>
               </div>
             </div><br /><br />
-            <div style={{textAlign: 'center', borderTop: '1px solid #353b48', marginTop: '10px', paddingTop: '10px'}}>
+            <div className='sep'>
               <label>contact Details</label>
             </div>
             <div>
               <h3>Phone Number</h3>
-              <input type='text' placeholder='Phone Number' id='dialog-input' />
+              <input type='tel' placeholder='Phone Number' id='dialog-input' />
             </div>
             <div>
               <h3>Mobile Number</h3>
-              <input type='text' placeholder='Mobile Number' id='dialog-input' />
+              <input type='tel' placeholder='Mobile Number' id='dialog-input' />
             </div>
             <div>
               <h3>Email</h3>
@@ -94,7 +120,26 @@ class CreateCmp extends React.Component {
             </div>
             <div>
               <h3>Financial year begins from</h3>
-              <input type='date' placeholder='Date' id='dialog-input' value={this.state.Cmp.date} />
+              <input type='date' placeholder='Date' id='dialog-input' value={this.state.Cmp.financialDate} onChange={this.onfinancialDateChange} />
+            </div>
+            <div>
+              <h3>Books beginning from</h3>
+              <input type='date' placeholder='Date' id='dialog-input' value={this.state.Cmp.booksBeginDate} onChange={this.onbooksBeginDateChange} />
+            </div>
+            <div className='sep'>
+              <label>Base Currency Information</label>
+            </div>
+            <div>
+              <h3>Base currency symbol</h3>
+              <div className='select-dropdown'>
+                <select>
+                  {
+                    this.state.currencySymbols.map((currency, i) => {
+                      return <CurrencySymbol symbol={currency.symbol} name={currency.name} key={i} />
+                    })
+                  }
+                </select>
+              </div>
             </div>
           </div>
   
