@@ -1,0 +1,29 @@
+.shut-cmp-container {
+  display: none;
+  text-align: left;
+}
+
+.shut-content {
+  padding: 2px 16px;
+  overflow-y: auto;
+  max-height: calc(100vh - 210px);
+}
+
+.shut-content #shut-cmp {
+  color: white;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 6px;
+  float: right;
+  background: #283c86;
+  margin: 5px;
+  border-radius: 7px;
+  transition: all 0.3s;
+  opacity: 0.8;
+  outline: none;
+}
+
+.shut-content #shut-cmp:hover {
+  opacity: 1;
+}

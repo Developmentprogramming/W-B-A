@@ -13,11 +13,6 @@ const closeCreateCmp = () => {
   createcmp.style.display = 'none';
 }
 
-const getDate = () => {
-  let date = new Date();
-  return (`${date.getDay()} / ${date.getMonth()} / ${date.getFullYear()}`);
-}
-
 class CreateCmp extends React.Component {
   constructor() {
     super()

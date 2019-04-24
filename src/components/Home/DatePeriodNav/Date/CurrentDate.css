@@ -1,0 +1,8 @@
+.date-container {
+  color: white;
+}
+
+.date-container label {
+  font-size: 12px;
+  font-family: 'Quicksand', sans-serif;
+}
