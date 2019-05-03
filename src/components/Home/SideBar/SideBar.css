@@ -12,6 +12,7 @@
   text-align: center;
   font-family: 'Quicksand', sans-serif;
   cursor: default;
+  overflow-y: auto;
 }
 
 /* The navigation menu links */
@@ -37,6 +38,8 @@
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
+  .sidenav {
+    padding-top: 15px;
+  }
   .sidenav p {font-size: 18px;}
-} 
+}

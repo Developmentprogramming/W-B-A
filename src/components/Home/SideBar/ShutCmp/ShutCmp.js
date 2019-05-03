@@ -16,7 +16,41 @@ class ShutCmp extends React.Component {
   constructor() {
     super();
     this.state= {
-      listCmp: ['Big Cmp' ,'Cmp 1', 'Cmp 2', 'Cmp 3', 'Cmp 4', 'Cmp 5', 'Cmp 6', 'Cmp 7', 'Cmp 8', 'Cmp 9', 'Cmp 10', 'Cmp 11', 'Cmp 12']
+      listCmp:
+      [
+        {
+        cmpName: 'Big Cmp',
+        email: 'something@gmail.com'
+        },
+        {
+        cmpName: 'Cmp 1',
+        email: 'john@gmail.com'
+        },
+        {
+          cmpName: 'Cmp 2',
+          email: 'something@gmail.com'
+        },
+        {
+          cmpName: 'Cmp 3',
+          email: 'something@gmail.com'
+        },
+        {
+          cmpName: 'Cmp 4',
+          email: 'something@gmail.com'
+        },
+        {
+          cmpName: 'Cmp 5',
+          email: 'something@gmail.com'
+        },
+        {
+          cmpName: 'Cmp 6',
+          email: 'something@gmail.com'
+        },
+        {
+          cmpName: 'Cmp 7',
+          email: 'something@gmail.com'
+        }
+      ]
     }
   }
 
@@ -27,14 +61,14 @@ class ShutCmp extends React.Component {
         <div className='w3-modal-content w3-animate-left' style={{borderRadius: '5px 0px'}}>
           <header className='w3-container shut-header header-container'>
             <span onClick={() => {closeShutCmp()}} className='close'>&times;</span>
-            <h1>Shut Company</h1>
+            <h1>Alter Company</h1>
           </header>
-  
+
           <div className='w3-container shut-content'>
             <div className='w3-ul' style={{width: '100%', overflowY: 'auto', position: 'relative'}}>
               {
                 this.state.listCmp.map((name, i) => {
-                  return <ShutList name={name} key={i} />
+                  return <ShutList name={name.cmpName} key={i} email={name.email} />
                 })
               }
             </div>

@@ -1,0 +1,13 @@
+.period-container {
+  display: none;
+  text-align: left;
+}
+
+.period-container-value {
+  color: black;
+  border: 1px solid #aaaaaa;
+  opacity: 0.7;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 10px;
+}
