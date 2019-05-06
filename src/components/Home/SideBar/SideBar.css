@@ -13,6 +13,8 @@
   font-family: 'Quicksand', sans-serif;
   cursor: default;
   overflow-y: auto;
+  border-radius: 5px;
+  user-select: none;
 }
 
 /* The navigation menu links */

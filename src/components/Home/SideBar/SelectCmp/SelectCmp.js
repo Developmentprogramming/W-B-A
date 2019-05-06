@@ -12,19 +12,22 @@ const closeSelectCmp = () => {
   container.style.display = 'none';
 }
 
+let self;
+
 class SelectCmp extends React.Component {
   constructor() {
     super();
     this.state = {
+      company: '',
       listCmp:
       [
         {
-        cmpName: 'Big Cmp',
-        email: 'something@gmail.com'
+          cmpName: 'Big Cmp',
+          email: 'something@gmail.com'
         },
         {
-        cmpName: 'Cmp 1',
-        email: 'john@gmail.com'
+          cmpName: 'Cmp 1',
+          email: 'john@gmail.com'
         },
         {
           cmpName: 'Cmp 2',
@@ -49,12 +52,17 @@ class SelectCmp extends React.Component {
         {
           cmpName: 'Cmp 7',
           email: 'something@gmail.com'
+        },
+        {
+          cmpName: 'The huge company names',
+          email: 'something@gmail.com'
         }
       ]
     }
   }
 
   render() {
+    self = this;
     return (
       <div className='w3-modal select-cmp-container'>
         <div className='w3-modal-content w3-animate-left' style={{borderRadius: '5px 5px 0px 0px'}}>
@@ -67,7 +75,7 @@ class SelectCmp extends React.Component {
             <div className='w3-ul' style={{width: '100%', overflowY: 'auto', position: 'relative'}}>
               {
                 this.state.listCmp.map((name, i) => {
-                  return <List key={i} name={name.cmpName} email={name.email} />
+                  return <List key={i} name={name.cmpName} email={name.email} self={self} id={i} />
                 })
               }
             </div>
@@ -80,5 +88,5 @@ class SelectCmp extends React.Component {
 
 export default SelectCmp;
 export {
-  launchSelectCmp
+  launchSelectCmp,
 }

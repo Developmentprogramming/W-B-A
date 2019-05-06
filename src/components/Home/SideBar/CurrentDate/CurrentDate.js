@@ -3,7 +3,7 @@ import './CurrentDate.css';
 
 const getDate = () => {
   let date = new Date();
-  return (`${date.getDate()} ${date.getMonth()+1} ${date.getFullYear()}`);
+  return (`${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`);
 }
 
 const launchDate = () => {
@@ -22,12 +22,17 @@ class CurrentDate extends React.Component {
     this.state = {
       currentDate: ''
     }
-  }
+  };
 
   componentDidMount() {
     let currentdate = getDate();
     this.setState({currentDate: currentdate});
-  }
+  };
+
+  setNewDate = (event) => {
+    let changeDateInput = document.getElementsByClassName('change-date-input')[0];
+    this.setState({currentDate: changeDateInput.value});
+  };
 
   render() {
     return (
@@ -47,12 +52,12 @@ class CurrentDate extends React.Component {
             </div>
             <div className='date-content-value'>
               <h3>Change Date</h3>
-              <input type='date' id='dialog-input' placeholder='Change date' />
+              <input className='change-date-input' type='date' id='dialog-input' placeholder='Change date' />
             </div>
           </div>
 
           <footer className='w2-container create-cmp-footer'>
-            <button className='dialog-button'>Save</button>
+            <button className='dialog-button' onClick={this.setNewDate} >Save</button>
           </footer>
         </div>
       </div>

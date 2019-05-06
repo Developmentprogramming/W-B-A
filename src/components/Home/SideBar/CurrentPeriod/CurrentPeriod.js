@@ -14,7 +14,7 @@ const launchPeriod = () => {
 
 const getPeriodTo = () => {
   let date = new Date();
-  return (`${date.getDate()} ${date.getMonth()+1} ${date.getUTCFullYear()+1}`);
+  return (`${date.getUTCFullYear()+1}-${date.getMonth()+1}-${date.getDate()}`);
 }
 
 class CurrentPeriod extends React.Component {
@@ -25,6 +25,14 @@ class CurrentPeriod extends React.Component {
       periodTo: getPeriodTo()
     }
   }
+
+  setNewPeriod = () => {
+    let periodFrom = document.getElementsByClassName('period-from')[0].value;
+    let periodTo = document.getElementsByClassName('period-to')[0].value;
+    this.setState({periodFrom: periodFrom});
+    this.setState({periodTo: periodTo});
+  }
+
   render() {
     return (
       <div className='w3-modal period-container'>
@@ -33,7 +41,7 @@ class CurrentPeriod extends React.Component {
             <span onClick={() => {closePeriod()}} className='close'>&times;</span>
             <h1>Period</h1>
           </header>
-  
+
           <div className='w3-container period-content'>
             <div style={{textAlign: 'center'}}>
               <div className='period-container-value'>
@@ -45,16 +53,16 @@ class CurrentPeriod extends React.Component {
             </div>
             <div className='date-content-value'>
               <h3>Period From</h3>
-              <input type='date' id='dialog-input' placeholder='Period From' />
+              <input className='period-from' type='date' id='dialog-input' placeholder='Period From' />
             </div>
             <div className='date-content-value'>
               <h3>Period To</h3>
-              <input type='date' id='dialog-input' placeholder='Period To' />
+              <input className='period-to' type='date' id='dialog-input' placeholder='Period To' />
             </div>
           </div>
-  
+
           <footer className='w3-container create-cmp-footer'>
-            <button className='dialog-button'>Save</button>
+            <button className='dialog-button' onClick={this.setNewPeriod}>Save</button>
           </footer>
         </div>
       </div>

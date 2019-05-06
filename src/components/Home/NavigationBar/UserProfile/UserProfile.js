@@ -62,10 +62,10 @@ class UserProfile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      fullnameValue: 'John Doe',
-      usernameValue: 'John',
-      emailValue: 'john154@gmail.com',
-      profileValue: avatar,
+      fullnameValue: '',
+      usernameValue: '',
+      emailValue: '',
+      profileValue: '',
       userInfo: {
         fullname: 'John Doe',
         username: 'John',
@@ -74,6 +74,14 @@ class UserProfile extends React.Component {
       }
     };
     this.onFileDialogChange = this.onFileDialogChange.bind(this);
+  }
+
+  resetUsersValues = () => {
+    this.setState({fullnameValue: this.state.userInfo.fullname, usernameValue: this.state.userInfo.username, emailValue: this.state.userInfo.email, profileValue: this.state.userInfo.profileLogo});
+  }
+
+  componentDidMount() {
+    this.resetUsersValues();
   }
 
   onFullNameChange = (event) => {
@@ -120,10 +128,10 @@ class UserProfile extends React.Component {
           </div>
           <div className="flip-card-back">
             <h3>{this.state.userInfo.fullname}</h3>
-            <button id='editbutton' onClick={() => {launchEditDialog()}} >Edit</button>
+            <button id='editbutton' onClick={() => {launchEditDialog(); this.resetUsersValues();}} >Edit</button>
           </div>
         </div>
-  
+
         <div id="myModal" className="modal">
           <div className="modal-content">
             <div className="modal-header">
@@ -159,13 +167,13 @@ class UserProfile extends React.Component {
               </div>
             </div>
             <div className="modal-footer">
-              <button className='dialog-button' onClick={this.onSaveButtonClick} >Save</button>
-              <button className='dialog-button' onClick={() => {closeEditDialog()}} >Cancel</button>
+              <button className='dialog-button' onClick={() => {this.onSaveButtonClick(); this.resetUsersValues();}} >Save</button>
+              <button className='dialog-button' onClick={() => {closeEditDialog(); this.resetUsersValues();}} >Cancel</button>
             </div>
           </div>
         </div>
 
-      </div> 
+      </div>
     )
   }
 }

@@ -2,6 +2,7 @@
   display: 'none';
   text-align: left;
   border-radius: 10px;
+  user-select: none;
 }
 
 .header-container {
@@ -25,11 +26,11 @@
   height: calc(100vh - 210px);
 }
 
-.content-container #list {
+.content-container .list {
   opacity: 0.6;
 }
 
-.content-container #list:hover {
+.content-container .list:hover {
   border: none;
   outline: none;
   opacity: 0.9;
