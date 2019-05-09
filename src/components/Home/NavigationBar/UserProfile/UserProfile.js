@@ -1,7 +1,6 @@
 import React from 'react';
 import './UserProfile.css';
 import avatar from '../img_avatar.png';
-import FileReader from 'filereader';
 
 const showPasswdArea = () => {
   let passwdArea = document.getElementsByClassName('passwd-area')[0];

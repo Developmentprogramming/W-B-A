@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
-    "filereader": "^0.10.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8",

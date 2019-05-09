@@ -89,4 +89,5 @@ class SelectCmp extends React.Component {
 export default SelectCmp;
 export {
   launchSelectCmp,
+  self
 }

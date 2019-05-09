@@ -1,8 +1,14 @@
 import React from 'react';
+import { launchCreate } from '../Ledgers/Create/Create';
 
-const Item = ({ name }) => {
+const Item = ({ name, gateWayRouteChange }) => {
   return (
-    <div className='item'>
+    <div onClick={() => {
+      if(name === 'Create')
+        launchCreate()
+      else
+        gateWayRouteChange(name);
+      }} className='item'>
       <h3>{name}</h3>
     </div>
   );

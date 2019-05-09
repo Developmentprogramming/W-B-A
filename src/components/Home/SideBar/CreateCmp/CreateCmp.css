@@ -5,7 +5,7 @@
 
 .sep {
   text-align: center;
-  border-top: 1px solid #353b48; 
+  border-top: 1px solid #353b48;
   margin-top: 10px;
   padding-top: 10px;
 }
@@ -36,9 +36,9 @@
 }
 
 .create-cmp-content label {
-  font-size: 17px;
+  font-size: 16px;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 300;
   letter-spacing: 1px;
   border-bottom: 1px solid #ccc;
 }

@@ -6,6 +6,8 @@ const SelectCmp = (id, self) => {
   self.setState({company: textContent});
   let currentCmp = document.getElementById('current-cmp');
   currentCmp.textContent = textContent;
+  let selectDialog = document.getElementsByClassName('select-cmp-container')[0];
+  selectDialog.style.display = 'none';
 }
 
 const List = ({ name, email, self, id }) => {

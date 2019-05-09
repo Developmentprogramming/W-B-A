@@ -66,7 +66,7 @@ class CreateCmp extends React.Component {
             <span onClick={() => {closeCreateCmp()}} className='close'>&times;</span>
             <h1>Company Creation</h1>
           </header>
-  
+
           <div className='w3-container create-cmp-content'>
             <div>
               <h3>Company Name</h3>
@@ -137,7 +137,7 @@ class CreateCmp extends React.Component {
               </div>
             </div>
           </div>
-  
+
           <footer className='w3-container create-cmp-footer'>
             <button className='dialog-button'>Create</button>
           </footer>
@@ -149,5 +149,5 @@ class CreateCmp extends React.Component {
 
 export default CreateCmp;
 export {
-  launchCreateCmp
+  launchCreateCmp,
 }
