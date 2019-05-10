@@ -6,7 +6,7 @@ class Ledgers extends React.Component {
   constructor() {
     super();
     this.state = {
-      SingleLedgers:
+      Ledgers:
       [
         {
           name: 'Create'
@@ -17,7 +17,7 @@ class Ledgers extends React.Component {
         {
           name: 'Alter'
         }
-      ]
+      ],
     }
   }
 
@@ -36,7 +36,7 @@ class Ledgers extends React.Component {
         </div>
         <div>
           {
-            this.state.SingleLedgers.map((item, i) => {
+            this.state.Ledgers.map((item, i) => {
               return <Item name={item.name} gateWayRouteChange={this.props.gateWayRouteChange} key={i} />
             })
           }

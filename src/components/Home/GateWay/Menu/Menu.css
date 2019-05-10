@@ -131,7 +131,7 @@
   }
 }
 
-@media screen and (max-height: 500px) {
+@media screen and (max-height: 550px) {
   .gateway {
     height: 100%;
     overflow: auto;
@@ -145,7 +145,7 @@
   }
 }
 
-@media screen and (max-height: 400px) {
+@media screen and (max-height: 500px) {
   .gateway {
     height: 100%;
     overflow: auto;
@@ -159,7 +159,7 @@
   }
 }
 
-@media screen and (max-height: 300px) {
+@media screen and (max-height: 450px) {
   .gateway {
     height: 100%;
     overflow: auto;
@@ -173,7 +173,7 @@
   }
 }
 
-@media screen and (max-height: 200px) {
+@media screen and (max-height: 400px) {
   .gateway {
     height: 100%;
     overflow: auto;

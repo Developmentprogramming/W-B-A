@@ -6,6 +6,7 @@ import ShutCmp, { launchShutCmp } from './ShutCmp/ShutCmp';
 import CurrentDate, { launchDate } from './CurrentDate/CurrentDate';
 import CurrentPeriod, { launchPeriod } from './CurrentPeriod/CurrentPeriod';
 import Create from '../GateWay/Ledgers/Create/Create';
+import AccountingVouchers from '../GateWay/AccountingVouchers/AccountingVouchers';
 
 const openNav = () => {
   let w = window.innerWidth;
@@ -14,19 +15,15 @@ const openNav = () => {
     document.getElementById("mySidenav").style.width = "100%";
   else
     document.getElementById("mySidenav").style.width = "250px";
-  let closebtn = document.getElementsByClassName('sidenav-menu')[0];
-  closebtn.style.display = 'none';
 }
 
 const closeNav = () => {
   document.getElementById("mySidenav").style.width = "0";
-  let closebtn = document.getElementsByClassName('sidenav-menu')[0];
-  closebtn.style.display = 'block';
 }
 
 const SideBar = () => {
   return (
-    <div  id='mySidenav' className="sidenav">
+    <div id='mySidenav' className="sidenav">
       <p className="closebtn" onClick={() => {closeNav()}}>&times;</p>
       <p onClick={() => {launchSelectCmp()}} >Select Cmp</p>
       <p onClick={() => {launchCreateCmp()}} >Create Cmp</p>
@@ -39,6 +36,7 @@ const SideBar = () => {
       <CurrentDate />
       <CurrentPeriod />
       <Create />
+      <AccountingVouchers />
     </div>
   );
 };

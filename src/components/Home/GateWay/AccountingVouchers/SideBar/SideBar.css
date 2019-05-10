@@ -1,0 +1,18 @@
+.sidenavedit {
+  position: absolute;
+  right: 10;
+  top: 20;
+}
+
+.sidenavedit div {
+  text-align: center;
+}
+
+.sidenavedit label {
+  color: white;
+  border-bottom: 1px solid #818181;
+  font-size: 18px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  padding: 10px;
+}

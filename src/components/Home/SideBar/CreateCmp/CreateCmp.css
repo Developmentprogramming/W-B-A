@@ -105,3 +105,17 @@
   background: linear-gradient(to right, #283c86, #45a247);
   text-align: center;
 }
+
+@media screen and (max-width: 600px) {
+  .create-cmp-content {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .create-cmp-content {
+    width: 100%;
+    height: 100%;
+  }
+}
