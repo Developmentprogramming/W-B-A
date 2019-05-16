@@ -1,6 +1,7 @@
 .main-date-container {
   display: none;
   text-align: left;
+  z-index: 4;
 }
 
 .date-content {

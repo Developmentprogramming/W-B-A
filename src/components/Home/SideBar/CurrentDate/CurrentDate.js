@@ -32,6 +32,7 @@ class CurrentDate extends React.Component {
   setNewDate = (event) => {
     let changeDateInput = document.getElementsByClassName('change-date-input')[0];
     this.setState({currentDate: changeDateInput.value});
+    document.getElementById('date').textContent = changeDateInput.value;
   };
 
   render() {

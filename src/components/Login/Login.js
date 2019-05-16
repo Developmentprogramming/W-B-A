@@ -29,13 +29,13 @@ const focusPasswdInput = () => {
 
 const Login = ({ onRouteChange }) => {
   return (
-    <div className='logincontainer' style={{maxWidth:'500px', margin:'auto'}}>
+    <div className='logincontainer'>
       <h2>Login</h2>
       <div className="input-container">
         <i className="fa fa-user icon"></i>
         <input className="input-field" type="text" placeholder="Username" name="usrnm" />
       </div>
-      
+
       <div className="input-container">
         <i className="fa fa-key icon"></i>
         <input id='passwd' type="password" placeholder="Password" name="psw" />

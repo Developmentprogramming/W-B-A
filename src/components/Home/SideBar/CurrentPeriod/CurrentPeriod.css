@@ -3,6 +3,10 @@
   text-align: left;
 }
 
+.period-content {
+  height: calc(100vh - 210px);
+}
+
 .period-container-value {
   color: black;
   border: 1px solid #aaaaaa;

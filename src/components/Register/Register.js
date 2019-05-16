@@ -4,7 +4,7 @@ import { toggleShowButton, focusPasswdInput } from'../Login/Login';
 
 const Register = () => {
   return (
-    <div className='registercontainer' style={{maxWidth:'500px', margin:'auto'}}>
+    <div className='registercontainer'>
       <h2>Register and Leave accounting on us</h2>
 
       <div className="input-container">
